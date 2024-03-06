@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Countries } from './CitiesAndCountries.jsx';
+import backPic from './components/backgrounds.js';
+import './app.css';
 
 function App() {
+  const [weather, setWeather] = useState({ main: 'Clear' });
+  console.log(weather.main)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <><nav className="navbar navbar-expand-lg border-bottom border-dark bg-dark" role="navigation">
+      <div className="container">
+        <text className="text" style={{ fontFamily: 'Georgia', fontSize: '20px', fontWeight: 'bold' }}>1PersonStudio [WEATHER]</text>
+        <Countries setWeather={setWeather} />
+      </div>
+    </nav>
+    <div className="img" style={{ backgroundImage: `url(${backPic[weather.main]})`, height: '92vh' }}>
+      <div className="weatherwidget">
+        <div className="row">
+          <div className="part-widget" >
+            <div className="text-weather" >{weather.main}</div>
+          </div>
+          <div className="part-widget1" >
+            <div className="text-weather" >{weather.main}</div>
+          </div>
+          <div className="part-widget1" >
+            <div className="text-weather" >{weather.main}</div>
+          </div>
+          <div className="part-widget1" >
+            <div className="text-weather" >{weather.main}</div>
+          </div>
+        </div>
+      </div>
+      </div></>
   );
 }
 
