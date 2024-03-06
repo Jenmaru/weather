@@ -15,7 +15,7 @@ const Countries = () => {
       axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=` +
       'd5b7986b3229a2766c316228c0f25015' +  // !!!
       '&units=metric')
-      .then((data) => dispatch(actions.newData((data.data))));
+      .then((data) => setTimeout(() => dispatch(actions.newData((data.data)))), 1000);
     }, [currentCity, dispatch]);
 
     return (
