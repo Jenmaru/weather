@@ -54,7 +54,7 @@
     -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
 }
 
-.part-widget1 {
+.part-widget2 {
     background-color: rgb(7, 7, 7);
     height: 200px;
     width: 185px;
@@ -63,4 +63,20 @@
     -webkit-border-radius: 10px;
     -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
     -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+
+.title {
+    font-size: 40px;
+    background: -webkit-linear-gradient(#685608, #000000);
+    margin-left: 17rem;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+.navbar {
+    outline: 5px solid #111;
+    border-top: 1px solid #555;
+    padding: 10px;
+    background: #333;
 }

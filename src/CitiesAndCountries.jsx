@@ -1,21 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { actions } from './slices/weatherDataSlice.js';
 import countriesjson from './components/countries/countries.json';
 
-const Countries = ({ setWeather }) => {
+const Countries = () => {
+  const dispatch = useDispatch();
   const [currentCountry, setCurrentCountry] = useState('Afghanistan');
   const [currentCity, setCurrentCity] = useState(countriesjson[currentCountry][0]);
-  const [dataWeather, setDataWeather] = useState('');
   const keys = Object.keys(countriesjson);
 
     useEffect(() => {
       axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=` +
       'd5b7986b3229a2766c316228c0f25015' +  // !!!
       '&units=metric')
-      .then((data) => setDataWeather(data.data.weather[0]))
-      setWeather(dataWeather);
-    }, [currentCity, dataWeather, setWeather]);
+      .then((data) => dispatch(actions.newData((data.data))));
+    }, [currentCity, dispatch]);
 
     return (
       <div class="row container">
