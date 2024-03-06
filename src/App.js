@@ -4,10 +4,8 @@ import { useSelector } from 'react-redux';
 import backPic from './components/backgrounds.js';
 import './app.css';
 
-function App() {
+const App = () => {
   const { weather, wind, main } = useSelector((state) => state.weather);
-  const weather1 = useSelector((state) => state.weather);
-  console.log(weather1);
 
   return (
       <><nav className="navbar navbar-expand-lg" role="navigation">
