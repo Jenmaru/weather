@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
@@ -18,10 +18,12 @@ const Countries = () => {
     return response;
   };
 
+  const call = useCallback(() => res(), [])
+
   useEffect(() => {
-    res()
-      .then((data) => setTimeout(() => dispatch(actions.newData((data.data)))), 1000);
-    }, [dispatch, res]);
+    call()
+      .then((data) => setTimeout(() => dispatch(actions.newData((data.data)))), 3000);
+    }, [dispatch, call]);
 
     return (
       <div class="row container">
