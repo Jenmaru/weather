@@ -11,8 +11,8 @@ const Countries = () => {
   const [currentCity, setCurrentCity] = useState(countriesjson[currentCountry][0]);
   const keys = Object.keys(countriesjson);
 
-    useEffect(() => {
-      axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=` +
+  useEffect(() => {
+    axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=` +
       'd5b7986b3229a2766c316228c0f25015' +  // !!!
       '&units=metric')
       .then((data) => setTimeout(() => dispatch(actions.newData((data.data)))), 1000);

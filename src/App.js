@@ -16,6 +16,7 @@ const App = () => {
     </nav>
     <div className="img" style={{ backgroundImage: `url(${backPic[weather[0].main]})`, height: '92vh' }}>
     <div className="title" >Погода сейчас</div>
+    <div className="container">
       <div className="weatherwidget">
         <div className="row">
           <div className="part-widget" >
@@ -31,6 +32,7 @@ const App = () => {
             <div className="text-weather" >Давление {JSON.stringify(main.pressure)}</div>
           </div>
         </div>
+      </div>
       </div>
       </div></>
   );
