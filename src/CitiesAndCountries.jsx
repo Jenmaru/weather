@@ -10,20 +10,20 @@ const Countries = () => {
   const [currentCountry, setCurrentCountry] = useState('Afghanistan');
   const [currentCity, setCurrentCity] = useState(countriesjson[currentCountry][0]);
   const keys = Object.keys(countriesjson);
-  const res = async () => {
-    const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${currentCity}&appid=` +
+  const res = async (current) => {
+    const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${current}&appid=` +
     'd5b7986b3229a2766c316228c0f25015' +  // !!!
     '&units=metric');
     console.log(response);
+    dispatch(actions.newData((response.data)));
     return response;
   };
 
-  const call = useCallback(() => res(), [])
+  const call = useCallback((current) => res(current), [res])
 
   useEffect(() => {
-    call()
-      .then((data) => setTimeout(() => dispatch(actions.newData((data.data)))), 3000);
-    }, [dispatch, call]);
+    call(currentCity);
+    }, [call]);
 
     return (
       <div class="row container">
