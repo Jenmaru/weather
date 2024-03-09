@@ -21,22 +21,18 @@ const Countries = () => {
       return response;
     };
     res();
-    }, [currentCity, dispatch]);
+  }, [currentCity, dispatch]);
 
-    return (
-      <div class="row container">
-        <Form.Select className="col-sm form" style={{ marginRight: '1rem' }} aria-label="Default select example" onChange={(e) => {setCurrentCity(countriesjson[currentCountry][0]); setCurrentCountry(e.target.value)}}>
-          {keys.map((el) => {
-            return <option key={el + '0'} value={el}>{el}</option>
-          })}
-        </Form.Select>
-        <Form.Select className="col-sm form" style={{ marginRight: '32rem' }} aria-label="Default select example" onChange={(e) => setCurrentCity(e.target.value)}>
-          {countriesjson[currentCountry].map((el) => {
-            return <option key={el + '1'} value={el}>{el}</option>
-          })}
-        </Form.Select>
-        </div>
-      );
+  return (
+    <div className="row container">
+      <Form.Select className="col-sm form" style={{ marginRight: '1rem' }} aria-label="Default select example" onChange={(e) => { setCurrentCity(countriesjson[currentCountry][0]); setCurrentCountry(e.target.value); }}>
+        {keys.map((el) => <option key={`${el}0`} value={el}>{el}</option>)}
+      </Form.Select>
+      <Form.Select className="col-sm form" style={{ marginRight: '32rem' }} aria-label="Default select example" onChange={(e) => setCurrentCity(e.target.value)}>
+        {countriesjson[currentCountry].map((el) => <option key={`${el}1`} value={el}>{el}</option>)}
+      </Form.Select>
+    </div>
+  );
 };
 
-export {Countries};
+export default Countries;
