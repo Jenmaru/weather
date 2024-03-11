@@ -6,7 +6,7 @@ import { actions } from './slices/weatherDataSlice.js';
 import countriesjson from './components/countries/countries.json';
 
 const Countries = () => {
-  const urlApi = 'http://api.openweathermap.org/data/2.5/weather?q=';
+  const urlApi = 'https://api.openweathermap.org/data/2.5/weather?q=';
   const apiKey = 'ac49b9980690f8865a0bff21790989ef';
   const dispatch = useDispatch();
   const [currentCountry, setCurrentCountry] = useState('Afghanistan');
