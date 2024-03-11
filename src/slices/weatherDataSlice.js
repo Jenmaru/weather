@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { weather: [''], main: '', wind: '' };
+const initialState = { weather: [{ description: '', main: 'default' }], main: { temp: '', pressure: '' }, wind: { speed: '' } };
 
 const weatherSlice = createSlice({
   name: 'weather',
