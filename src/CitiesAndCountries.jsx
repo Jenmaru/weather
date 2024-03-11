@@ -62,7 +62,7 @@ const Countries = () => {
       <div className="col-sm form">
         <ReactSearchAutocomplete
           styling={{
-            marginRight: '1rem', backgroundColor: 'white', borderRadius: '10px', border: '3px solid #dfe1e5', clearIconMargin: '-2px 5px 0 0',
+            backgroundColor: 'white', borderRadius: '10px', border: '3px solid #dfe1e5', clearIconMargin: '-2px 5px 0 0',
           }}
           items={countries}
           onSearch={handleOnSearch}
@@ -76,6 +76,9 @@ const Countries = () => {
       </div>
       <div className="col-sm form">
         <ReactSearchAutocomplete
+          styling={{
+            backgroundColor: 'white', borderRadius: '10px', border: '3px solid #dfe1e5', clearIconMargin: '-2px 5px 0 0',
+          }}
           items={currentCities}
           onSearch={handleOnSearch}
           onHover={handleOnHover}
@@ -83,7 +86,6 @@ const Countries = () => {
           onFocus={handleOnFocus}
           autoFocus
           formatResult={formatResultCity}
-          style={{ marginRight: '1rem' }}
           aria-label="Default select example"
         />
       </div>
