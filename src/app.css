@@ -1,15 +1,10 @@
 .text {
     font-size: 20px;
+    font-family: 'Georgia';
+    font-weight: Bold;
     background: -webkit-linear-gradient(#e4cece, #e2a80a);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-  }
-
-.form {
-    font-size: 20px;
-    background: -webkit-linear-gradient(#030000, #000000);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: #770b0b;
   }
 
 .img {
@@ -33,4 +28,15 @@
     border-top: 1px solid #555;
     padding: 10px;
     background: #333;
+}
+
+.weatherwidget {
+  background: rgba(205, 214, 219, 0.7);
+  margin-top: 1rem;
+  width: 20rem;
+  height: 20rem;
+}
+
+.position-data {
+  margin-left: 0.5rem;
 }

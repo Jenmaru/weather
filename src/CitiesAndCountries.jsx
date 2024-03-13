@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import { useDispatch } from 'react-redux';
 import { actions } from './slices/weatherDataSlice.js';
@@ -17,7 +16,6 @@ const Countries = () => {
   const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
     // the string searched and for the second the results.
-    console.log(string, results);
   };
 
   const handleOnHover = (result) => {
@@ -26,19 +24,16 @@ const Countries = () => {
   };
 
   const handleOnSelectCountry = (item) => {
-    console.log(item, 'vasyan');
     setCurrentCities(countriesjson[item.name].map((el) => ({ name: el })));
   };
 
   const handleOnSelectCity = (item) => {
     const res = async () => {
       const response = await axios.get(`${urlApi}${item.name}&appid=${apiKey}&lang=ru&units=metric`);
-      console.log(response);
       dispatch(actions.newData((response.data)));
       return response;
     };
     res();
-    console.log(item);
   };
 
   const handleOnFocus = () => {
@@ -72,6 +67,7 @@ const Countries = () => {
           autoFocus
           formatResult={formatResultCountry}
           aria-label="Default select example"
+          placeholder="Страна"
         />
       </div>
       <div className="col-sm form">
@@ -87,6 +83,7 @@ const Countries = () => {
           autoFocus
           formatResult={formatResultCity}
           aria-label="Default select example"
+          placeholder="Город"
         />
       </div>
     </div>
