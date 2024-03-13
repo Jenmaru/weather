@@ -16,6 +16,7 @@ const Countries = () => {
   const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
     // the string searched and for the second the results.
+    console.log(results, string);
   };
 
   const handleOnHover = (result) => {
